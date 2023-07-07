@@ -22,6 +22,7 @@
 		gap: 2.5rem;
 		justify-content: space-between;
 		padding-inline: 1.5rem;
+		margin-block: 1.5rem;
         background-color: transparent;
 		width: 80vw;
 		margin-block-end: .5rem;
@@ -31,5 +32,8 @@
 
 	input{
 		accent-color: #15e48e;
+	}
+	label{
+		font-size: clamp(1.21rem, calc(1.64rem+0.80vw), 2.24rem);
 	}
 </style>

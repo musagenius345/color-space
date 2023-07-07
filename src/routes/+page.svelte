@@ -28,14 +28,24 @@
 		}
 	];
 </script>
+<div class="container">
+    
+    {#each colorSpace as sliderValue, id}
+        <Slider colorValueName={sliderValue.name} colorValue={sliderValue.value} step={sliderValue.step} min={sliderValue.min} max={sliderValue.max}/>
+    {/each}
+</div>
 
-{#each colorSpace as sliderValue, id}
-	<Slider colorValueName={sliderValue.name} colorValue={sliderValue.value} step={sliderValue.step} min={sliderValue.min} max={sliderValue.max}/>
-{/each}
 
-
-<style>
+<style lang="postcss">
     :global(body){
     background-color: oklch(.80 0.10 225);
-    }    
+    font-family: Arial, Helvetica, sans-serif;
+}    
+
+.container{
+    display: grid;
+    place-items: center;
+    margin-block-start: 5rem;
+       
+    }
 </style>

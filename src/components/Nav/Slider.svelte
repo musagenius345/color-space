@@ -19,10 +19,12 @@
 	div {
 		display: flex;
 		flex-direction: column;
-		gap: 4em;
+		gap: 2.5rem;
 		justify-content: space-between;
 		padding-inline: 1.5rem;
         background-color: transparent;
+		width: 80vw;
+		margin-block-end: .5rem;
 
 		
 	}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Slider from '../components/Nav/Slider.svelte';
+	import Slider from '../components/Slider/Slider.svelte';
 
 	const colorSpace = [
 		{

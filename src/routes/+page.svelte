@@ -9,7 +9,6 @@
 
   <!-- <h1>Hello {name}</h1> -->
 
-<NavBar></NavBar>
 <Bio></Bio>
 <PersonalInfo/>
 <Experience/>

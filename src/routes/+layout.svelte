@@ -1,122 +1,75 @@
 <script>
- import NavBar from "../components/NavBar.svelte";
-
+	import NavBar from '../components/NavBar.svelte';
 </script>
 
 <head>
-  <title>Blog</title>
-  <link rel="stylesheet" href="../style.css">
-  <!-- <link rel="stylesheet" href="../normalize.css"> -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Blog</title>
+	<link rel="stylesheet" href="../style.css" />
+	<!-- <link rel="stylesheet" href="../normalize.css"> -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <NavBar></NavBar>
-  <div class="spacing">
-
- <slot>hello</slot> 
-  </div>
+	<NavBar />
+	<div class="spacing">
+		<slot>hello</slot>
+	</div>
 </body>
+
 <style>
-  /* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+	/* Box sizing rules */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
 
-@font-face {
-	font-family: 'Mulish';
-	src: url('/static/fonts/Mulish-VariableFont_wght.ttf');
-	src: url('/static/fonts/Mulish-VariableFont_wght.ttf.eot?#iefix') format('embedded-opentype'),
-		 url('/static/fonts/Mulish-VariableFont_wght.ttf.woff') format('woff'),
-		 url('/static/fonts/Mulish-VariableFont_wght.ttf.ttf') format('truetype'),
-		 url('/static/fonts/Mulish-VariableFont_wght.ttf.svg#Mulish') format('svg');
-	font-style: normal;
-	font-weight: normal;
-	font-display: swap;
-}
+	:global(:root) {
+		--txt: oklch(0.07 0.16 240); /*black*/
+		--accent: oklch(0.72 0.16 240); /*blue*/
+		--accent-dull: oklch(0.571 0.0516 240); /*lightblue*/
+		--primary: oklch(0.72 0.16 312); /*purple*/
+		--primary-dark: oklch(0.42 0.21 312); /*purple*/
+		--secondary: oklch(0.72 0.16 24.3); /*red*/
+		--secondary-dark: oklch(0.32 0.46 24.3); /*red*/
+		--surface: oklch(0.72 0.15 93.7); /*yellow*/
+		--tertiary: oklch(0.72 0.15 166); /*green*/
+	}
 
+	:global(a:not(button, nav)) {
+		color: var(--secondary-dark);
+	}
+	:global(h1,h2,h3,h4){
+   color: var(--primary-dark);
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
+	}
+	@font-face {
+		font-family: 'Mulish';
+		src: url('/fonts/Mulish-VariableFont_wght.ttf.eot?#iefix') format('embedded-opentype'),
+			url('/fonts/Mulish-VariableFont_wght.woff2') format('woff2'),
+			url('/fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+	}
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  font-family: 'Mulish', Arial, sans-serif;
-  min-height: 100vh;
-  font-size: clamp(1rem, calc(1.25rem + 0.9vw), 1.46rem);
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-dt,dd{
-    all: unset;
-  }
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-.spacing{
-    padding-inline: min(1.3em, 1.5rem);
-  }
-@media (min-width: 500px){
-    .spacing  {
-      padding-inline: 4.2rem;
-    }
-  }
-
-  </style>
+	/* Set core body defaults */
+	body {
+		font-family: 'Mulish', Arial, sans-serif;
+		/* min-height: 100vh; */
+		background-color: var(--surface);
+		font-size: clamp(1rem, calc(1.25rem + 0.9vw), 1.46rem);
+		text-rendering: optimizeSpeed;
+		line-height: 1.5;
+		accent-color: var(--accent);
+	}
+	.spacing {
+		padding-inline: min(1.3em, 1.5rem);
+	}
+	@media (min-width: 500px) {
+		.spacing {
+			padding-inline: 4.2rem;
+		}
+	}
+</style>
